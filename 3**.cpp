@@ -11,11 +11,10 @@ public:
                 flag[s[i]] = i;
             }
             else {
-                st = max(flag[s[i]] + 1, st);
+                st = max(flag[s[i]] + 1, st); //max
                 flag[s[i]] = i;
                 ed++;
             }
-            cout << st << ' ' << ed << endl;
             ans = max(ans, ed - st + 1);
         }
         cout << endl;
