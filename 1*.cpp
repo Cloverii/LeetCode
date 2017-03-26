@@ -1,11 +1,4 @@
-#include <algorithm>
-#include <iostream>
-#include <vector>
-#include <utility>
-#define PRLN(i) cout << #i << " = " << i << endl;
-#define DEBUG cout << "bug" << endl
-using namespace std;
-
+//O(n^2)
 class Solution {
     typedef pair<int, int> Pair;
     bool cmp (const Pair &x, const Pair &y) {
@@ -27,17 +20,3 @@ public:
         return ans;
     }
 };
-
-int main(void) {
-    freopen("in.txt", "r", stdin);
-    int n;
-    vector<int> v;
-    while(cin >> n && n != -1) v.push_back(n);
-    int t = v[v.size() - 1];
-    v.pop_back();
-    vector<int> ans;
-    Solution s;
-    ans = s.twoSum(v, t);
-    cout << ans[0] << ' ' << ans[1] << endl;
-    return 0;
-}
