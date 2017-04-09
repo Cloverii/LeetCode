@@ -13,12 +13,12 @@ public class Solution {
         PriorityQueue<ListNode> q = new PriorityQueue(lists.length, new Comparator<ListNode>(){
             @Override
             public int compare(ListNode o1,ListNode o2){
-                return Integer.compare(o1.val, o2.val);
+                return Integer.compare(o1.val, o2.val); // to simplify code
             }
         });
         
         for(ListNode node: lists) {
-            if(node != null) q.add(node); // [[]]
+            if(node != null) q.add(node); // pq doesn't permit null elements
         }
         
         while(!q.isEmpty()) {
