@@ -1,15 +1,14 @@
 public class Solution {
     public int searchInsert(int[] nums, int target) {
-        int l = 0, r = nums.length - 1;
+        int l = 0, r = nums.length;
         while(l < r) {
-            int mid = l + r >> 1; //***
+            int mid = l + (r - l) / 2;
             if(target > nums[mid]) {
-                l = mid + 1; //**
+                l = mid + 1;
             } else {
-                r = mid; //
+                r = mid;
             }
         }
-        if(l == nums.length - 1 && target > nums[l] ) l++;
         return l;
     }
 }
