@@ -8,7 +8,7 @@ public class Solution {
                 if(target >= nums[l] && target <= nums[m]) r = m;
                 else l = m + 1;
             } else {
-                if(target > nums[m] && target <= nums[r]) l = m + 1;
+                if(target > nums[m] && target <= nums[r]) l = m + 1; // target > nums[m]
                 else r = m ;
             }
 
