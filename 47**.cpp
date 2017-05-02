@@ -1,6 +1,7 @@
 class Solution {
 public:
-    vector<vector<int>> permute(vector<int>& nums) {
+    vector<vector<int>> permuteUnique(vector<int>& nums) {
+        sort(nums.begin(), nums.end()); // need sort
         vector<int> tmp;
         vector<int> flag(8, 0);
         vector<vector<int>> ans;
@@ -14,6 +15,7 @@ private:
             return;
         }
         for(int i = 0; i < nums.size(); i++) {
+            if(i && !flag[i - 1] && nums[i - 1] == nums[i]) continue; // arrange the order
             if(!flag[i]) {
                 tmp.push_back(nums[i]);
                 flag[i] = 1;
