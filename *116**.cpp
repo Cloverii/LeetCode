@@ -10,6 +10,7 @@ class Solution {
 public:
     void connect(TreeLinkNode *root) {
         if(!root) return;
+        /*
         queue<TreeLinkNode *> q;
         q.push(root);
         while(q.size()) {
@@ -24,6 +25,16 @@ public:
             for(int i = 0; i < v.size() - 1; i++) {
                 v[i]->next = v[i + 1];
             }
+        }
+        */
+        while(root->left) {
+            TreeLinkNode *p = root;
+            while(p) {  // no need for p->left
+                p->left->next = p->right;
+                if(p->next) p->right->next = p->next->left;
+                p = p->next;
+            }
+            root = root->left;  // go to next level
         }
     }
 };
